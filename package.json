@@ -1,0 +1,12 @@
+{
+  "name": "refactoring2nd",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "jest": "^27.0.4"
+  }
+}
