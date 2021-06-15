@@ -10,3 +10,7 @@ or
 npm install
 npm test -- --no-cache --watchAll
 ```
+
+## see
+
+https://martinfowler.com/articles/refactoring-video-store-js/
