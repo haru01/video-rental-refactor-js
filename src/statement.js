@@ -8,16 +8,16 @@ function statement(customer, movies) {
 
     // determine amount for each movie
     switch (movie.code) {
-      case "regular":
+      case 'regular':
         thisAmount = 2;
         if (r.days > 2) {
           thisAmount += (r.days - 2) * 1.5;
         }
         break;
-      case "new":
+      case 'new':
         thisAmount = r.days * 3;
         break;
-      case "childrens":
+      case 'childrens':
         thisAmount = 1.5;
         if (r.days > 3) {
           thisAmount += (r.days - 3) * 1.5;
@@ -28,7 +28,7 @@ function statement(customer, movies) {
     //add frequent renter points
     frequentRenterPoints++;
     // add bonus for a two day new release rental
-    if(movie.code === "new" && r.days > 2) frequentRenterPoints++;
+    if(movie.code === 'new' && r.days > 2) frequentRenterPoints++;
 
     //print figures for this rental
     result += `  ${movie.title}  ${thisAmount}\n` ;

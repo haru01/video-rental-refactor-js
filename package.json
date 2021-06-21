@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src/*.js --fix"
   },
   "devDependencies": {
     "eslint": "^7.28.0",
