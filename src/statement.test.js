@@ -1,6 +1,6 @@
 const statement = require('./statement');
 
-test('ステートメントが出力できることその１（本に載っているサンプル例）', () => {
+test('ステートメントが出力できることその１（Webに載っているサンプル例）', () => {
   const customer = {
     'name': 'martin',
     'rentals': [
@@ -28,3 +28,70 @@ You earned 2 frequent renter points
   expect(result).toEqual(expected);
 });
 
+test('ステートメントが出力できることその２（Webに載っているサンプル例）', () => {
+  const customer = {
+    'name': 'fowler',
+    'rentals': [
+      {'movieID': 'F003', 'days': 2},
+      {'movieID': 'F004', 'days': 3},
+    ]
+  };
+
+  const movies = {
+    'F003': {
+      'title': 'Star Wars',
+      'code': 'new'
+    },
+    'F004': {
+      'title': 'Fantastic Beasts',
+      'code': 'new'
+    },
+    // etc
+  };
+  
+
+  const expected =
+`Rental Record for fowler
+  Star Wars  6
+  Fantastic Beasts  9
+Amount owed is 15
+You earned 3 frequent renter points
+`;
+  const result = statement(customer, movies);
+  console.log(result);
+  expect(result).toEqual(expected);
+});
+
+test('ステートメントが出力できることその３（Webに載っているサンプル例）', () => {
+  const customer = {
+    'name': 'nobita',
+    'rentals': [
+      {'movieID': 'F005', 'days': 2},
+      {'movieID': 'F006', 'days': 4},
+    ]
+  };
+
+  const movies = {
+    'F005': {
+      'title': 'The Promised NeverLand',
+      'code': 'childrens'
+    },
+    'F006': {
+      'title': 'Demon Slayer',
+      'code': 'childrens'
+    },
+    // etc
+  };
+  
+
+  const expected =
+`Rental Record for nobita
+  The Promised NeverLand  1.5
+  Demon Slayer  3
+Amount owed is 4.5
+You earned 2 frequent renter points
+`;
+  const result = statement(customer, movies);
+  console.log(result);
+  expect(result).toEqual(expected);
+});
